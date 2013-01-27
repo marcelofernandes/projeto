@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
-
 import javax.swing.JOptionPane;
 
 
@@ -33,7 +32,7 @@ public class GerenteDePersistencia {
 		
 	public void conectaAoBanco(){
 		try{
-			connection = DriverManager.getConnection ( DATABASE_URL,"marcelo","marcelo" ); 
+			connection = DriverManager.getConnection ( DATABASE_URL,"forca","forca" ); 
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery(
 					"SELECT * FROM dados");
