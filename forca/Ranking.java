@@ -3,25 +3,35 @@ package Projeto_de_ayla;
 import java.util.Arrays;
 
 public class Ranking {
-	  
-	int pontos [];
-
-
+	
+	 int pontosDoJogador []; 
+	 
+	
 	public Ranking(){
-		pontos = new int [4];
+		this.pontosDoJogador = new int [4]; 
 	}
 
-	public void pontuacaoJogador(int []pontuacao){
-		for(int i=0; i<pontos.length; ++i){
-			pontos[i]= pontuacao[i];
+	public void pontuacaoDoJogador(int []pontuacao){
+		for(int i=0; i<pontosDoJogador.length; ++i){
+			this.pontosDoJogador[i]= pontuacao[i];
 		}
 	}
 
-	public void imprimnirRanking(){
-		Arrays.sort(pontos,0,pontos.length);
-		System.out.println(Arrays.toString(pontos));
+	public void imprimnirRankingOrdenado(){
+		Arrays.sort(pontosDoJogador,0,pontosDoJogador.length);
+		System.out.println(Arrays.toString(pontosDoJogador));
 	}
 
+	
+	public int maiorPontuacaoDoJogo(){
+		int aux = this.pontosDoJogador[0];
+		for(int i=1; i<pontosDoJogador.length; ++i){
+			if(aux < pontosDoJogador[i]){
+				aux = pontosDoJogador[i];
+			}			
+		}
+		return aux;
+	} 
 
+		
 }
-
