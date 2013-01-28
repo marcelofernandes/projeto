@@ -17,12 +17,8 @@ public class Ranking {
 		}
 	}
 
-	public void pontuacoesOrdenadas(){
-		Arrays.sort(pontos,0,pontos.length);
-		
-	}
 	public void imprimnirRanking(){
-		PontuacoesOrdenadas();
+		Arrays.sort(pontos,0,pontos.length);
 		System.out.println(Arrays.toString(pontos));
 	}
 
