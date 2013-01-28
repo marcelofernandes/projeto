@@ -17,7 +17,7 @@ public class Ranking {
 		}
 	}
 
-	public void PontuacoesOrdenadas(){
+	public void pontuacoesOrdenadas(){
 		Arrays.sort(pontos,0,pontos.length);
 		
 	}
