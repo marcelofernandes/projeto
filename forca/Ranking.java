@@ -16,10 +16,12 @@ public class Ranking {
 		if(qtdJogadores<10){
 			jogadoresDoRanking.add(jogador);
 			qtdJogadores++;
+			Collections.sort(jogadoresDoRanking);
 			Collections.reverse(jogadoresDoRanking);
 		}else if( jogador.getPontuacao() > jogadoresDoRanking.get(qtdJogadores-1).getPontuacao() ){
 			jogadoresDoRanking.remove(qtdJogadores-1);
 			jogadoresDoRanking.add(jogador);
+			Collections.sort(jogadoresDoRanking);
 			Collections.reverse(jogadoresDoRanking);
 		}
 	}
