@@ -1,6 +1,6 @@
 package Projeto_de_ayla;
 
-public class Jogador {
+public class Jogador implements Comparable <Jogador> {
 
 	private String nome;
 	private int pontuacao;
@@ -28,5 +28,18 @@ public class Jogador {
 
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
+	}
+	
+	@Override
+	public int compareTo(Jogador jogador){
+		if(this.pontuacao>jogador.pontuacao){
+			return 1;
+		}
+		else if(this.pontuacao == jogador.pontuacao){
+			return 0;
+		}
+		else{
+			return -1;
+		}
 	}
 }
