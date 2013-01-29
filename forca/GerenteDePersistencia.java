@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 
 public class GerenteDePersistencia {
+	private static final GerenteDePersistencia gerente = new GerenteDePersistencia();
 	private static final String DATABASE_URL = "jdbc:mysql://localhost/forca";
 	private Connection connection = null;
 	private Statement statement = null;
@@ -16,11 +17,14 @@ public class GerenteDePersistencia {
 	private int indiceAtual;
 	private ArrayList <Integer> lista ;
 	
-	public GerenteDePersistencia(){
+	private GerenteDePersistencia(){
 		lista = new ArrayList<Integer>();
 		iniciaLista();
 		indiceAtual = 0;
 		conectaAoBanco();
+	}
+	public static GerenteDePersistencia getGerente(){
+		return gerente;
 	}
 	
 	public void iniciaLista(){
