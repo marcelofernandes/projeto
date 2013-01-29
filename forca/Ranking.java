@@ -1,14 +1,27 @@
 package Projeto_de_ayla;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Ranking {
 	
-	 int pontosDoJogador []; 
-	 
+	private List <Jogador> jogadoresDoRanking; 
+	private int qtdJogadores;
 	
 	public Ranking(){
-		this.pontosDoJogador = new int [4]; 
+		this.jogadoresDoRanking = new ArrayList <Jogador>(); 
+		qtdJogadores = 0;
+	}
+	
+	public void comparaComRanking(Jogador jogador){
+		if(qtdJogadores<10){
+			jogadoresDoRanking.add(jogador);
+			qtdJogadores++;
+			Collections.reverse(jogadoresDoRanking);
+		}else if( jogador.getPontuacao() > jogadoresDoRanking.get(qtdJogadores-1).getPontuacao() ){
+			jogadoresDoRanking.remove(qtdJogadores-1);
+			jogadoresDoRanking.add(jogador);
+			Collections.reverse(jogadoresDoRanking);
+		}
 	}
 
 	public void pontuacaoDoJogador(int []pontuacao){
