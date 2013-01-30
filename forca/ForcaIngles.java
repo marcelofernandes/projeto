@@ -39,15 +39,13 @@ public class ForcaIngles implements ForcaInterface {
 	}
 
 	
-	public Ranking mostrarRanking() {
-		
-		return null;
+	public String imprimirRanking() {
+		return rankig.getDadosDoRanking();
 	}
 
 	
 	public void sair() {
-		
-		
+		//TODO
 	}
 
 }
