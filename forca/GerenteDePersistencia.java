@@ -8,7 +8,8 @@ import java.util.Collections;
 import javax.swing.JOptionPane;
 
 
-public class GerenteDePersistencia {
+public class GerenteDePersistencia implements InterfaceDePersistencia{
+	
 	private static final GerenteDePersistencia gerente = new GerenteDePersistencia();
 	private static final String DATABASE_URL = "jdbc:mysql://localhost/forca";
 	private Connection connection = null;
@@ -21,20 +22,20 @@ public class GerenteDePersistencia {
 		lista = new ArrayList<Integer>();
 		iniciaLista();
 		indiceAtual = 0;
-		conectaAoBanco();
+		conectarAoBanco();
 	}
 	public static GerenteDePersistencia getGerente(){
 		return gerente;
 	}
 	
-	public void iniciaLista(){
+	public void iniciarLista(){
 		for(int i = 1; i<=100; i++){
 			lista.add(i);
 		}
 		Collections.shuffle(lista);
 	}
 		
-	public void conectaAoBanco(){
+	public void conectarAoBanco(){
 		try{
 			connection = DriverManager.getConnection ( DATABASE_URL,"forca","forca" ); 
 			statement = connection.createStatement();
