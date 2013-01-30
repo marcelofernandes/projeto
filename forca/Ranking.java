@@ -5,48 +5,36 @@ import java.util.*;
 public class Ranking {
 	
 	private List <Jogador> jogadoresDoRanking; 
-	private int qtdJogadores;
+	private int qtdJogadoresNoRanking;
 	
 	public Ranking(){
 		this.jogadoresDoRanking = new ArrayList <Jogador>(); 
-		qtdJogadores = 0;
+		qtdJogadoresNoRanking = 0;
 	}
 	
-	public void comparaComRanking(Jogador jogador){
-		if(qtdJogadores<10){
+	public void compararJogadorComRanking(Jogador jogador){
+		if(qtdJogadoresNoRanking<10){
 			jogadoresDoRanking.add(jogador);
-			qtdJogadores++;
-			Collections.sort(jogadoresDoRanking);
-			Collections.reverse(jogadoresDoRanking);
-		}else if( jogador.getPontuacao() > jogadoresDoRanking.get(qtdJogadores-1).getPontuacao() ){
-			jogadoresDoRanking.remove(qtdJogadores-1);
+			qtdJogadoresNoRanking++;
+			ordenarRanking();
+		}else if( jogador.getPontuacao() > jogadoresDoRanking.get(qtdJogadoresNoRanking-1).getPontuacao() ){
+			jogadoresDoRanking.remove(qtdJogadoresNoRanking-1);
 			jogadoresDoRanking.add(jogador);
-			Collections.sort(jogadoresDoRanking);
-			Collections.reverse(jogadoresDoRanking);
+			ordenarRanking();
 		}
 	}
-
-	public void pontuacaoDoJogador(int []pontuacao){
-		for(int i=0; i<pontosDoJogador.length; ++i){
-			this.pontosDoJogador[i]= pontuacao[i];
-		}
+	private void ordenarRanking(){
+		Collections.sort(jogadoresDoRanking);
+		Collections.reverse(jogadoresDoRanking);
 	}
-
-	public void imprimnirRankingOrdenado(){
-		Arrays.sort(pontosDoJogador,0,pontosDoJogador.length);
-		System.out.println(Arrays.toString(pontosDoJogador));
-	}
-
 	
-	public int maiorPontuacaoDoJogo(){
-		int aux = this.pontosDoJogador[0];
-		for(int i=1; i<pontosDoJogador.length; ++i){
-			if(aux < pontosDoJogador[i]){
-				aux = pontosDoJogador[i];
-			}			
+	public String getDadosDoRanking(){
+		String dados = "";
+		for(Jogador jogador: this.jogadoresDoRanking){
+			dados = dados + "Nome: " + jogador.getNome() +
+				"\tPontuação: " + jogador.getPontuacao() + "\n";
 		}
-		return aux;
-	} 
-
+		return dados;
+	}
 		
 }
