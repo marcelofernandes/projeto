@@ -1,4 +1,4 @@
-package br.ufpb.poo.forca;
+package Projeto_de_ayla;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
