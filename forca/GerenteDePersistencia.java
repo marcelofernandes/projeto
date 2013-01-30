@@ -26,6 +26,7 @@ public class GerenteDePersistencia implements InterfaceDePersistencia{
 		indiceAtual = 0;
 		conectarAoBanco();
 	}
+	
 	public static GerenteDePersistencia getGerente(){
 		return gerente;
 	}
