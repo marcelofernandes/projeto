@@ -4,7 +4,14 @@ public class ForcaIngles implements ForcaInterface {
 	
 	private Jogador jogador;
 	private Desafio desafio;
+	private Ranking ranking;
+	private InterfaceDePersistencia gerente;
 	
+	public ForcaIngles(){
+		gerente = GerenteDePersistencia.getGerente();
+		ranking = new Ranking();
+		desafio = obterDesafio();
+	}
 	
 	public void criarJogador(String nome) {
 		this.jogador = new Jogador(nome);
@@ -12,7 +19,7 @@ public class ForcaIngles implements ForcaInterface {
 	}
 	
 	public void obterDesafio() {
-		this.desafio = new Desafio ();
+		this.desafio = new Desafio (gerente.getPalavraIngles(), gerente.getPalavrasPortuges(), gerente.getFrase());
 						
 	}
 		
@@ -35,12 +42,6 @@ public class ForcaIngles implements ForcaInterface {
 			return false;
 		}
 	
-	}
-
-	
-	public Desafio proximoDesafio() {
-		
-		return null;
 	}
 
 	
