@@ -6,8 +6,8 @@ public class ForcaIngles implements ForcaInterface {
 	private Desafio desafio;
 	
 	
-	public void criarJogador() {
-		this.jogador = new Jogador();
+	public void criarJogador(String nome) {
+		this.jogador = new Jogador(nome);
 				
 	}
 	
