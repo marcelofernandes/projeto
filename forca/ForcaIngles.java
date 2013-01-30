@@ -23,10 +23,10 @@ public class ForcaIngles implements ForcaInterface {
 						
 	}
 		
-	public boolean chutarLetra(char letra) {
-		String recebe = this.desafio.getPalavraIngles(); 
-		for(int i= 0 ; i< recebe.length(); i++){
-			if(recebe.charAt(i)== letra){
+	public boolean verificarLetra(char letra) {
+		String palavra = this.desafio.getPalavraIngles(); 
+		for(int i= 0 ; i< palavra.length(); i++){
+			if(palavra.charAt(i)== letra){
 				return true;
 			}
 		}
@@ -34,14 +34,8 @@ public class ForcaIngles implements ForcaInterface {
 	}
 
 
-	public boolean chutarPalavra(String palavra) {
-		if(this.desafio.getPalavraIngles().equals(palavra)){
-			return true;
-		}
-		else{
-			return false;
-		}
-	
+	public boolean verificarPalavra(String palavra) {
+		return (this.desafio.getPalavraIngles().equals(palavra))
 	}
 
 	
