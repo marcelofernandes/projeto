@@ -63,7 +63,9 @@ public class GerenteDePersistencia implements InterfaceDePersistencia{
 		try {
 			resultSet.absolute(lista.get(indiceAtual));
 			return (String)resultSet.getObject(3);
-		} catch (SQLException e) {
+		}catch(NullPointerException e){
+			JOptionPane.showMessageDialog(null,"palavra em portugues não encontrada");
+		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
 		return "";
@@ -72,7 +74,9 @@ public class GerenteDePersistencia implements InterfaceDePersistencia{
 	public String getPalavraIngles(){
 		try {
 			return (String)resultSet.getObject(2);
-		} catch (SQLException e) {
+		}catch(NullPointerException e){
+			JOptionPane.showMessageDialog(null,"palavra em inglês não encontrada");
+		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
 		return "";
@@ -83,7 +87,9 @@ public class GerenteDePersistencia implements InterfaceDePersistencia{
 			String frase = (String)resultSet.getObject(4);
 			indiceAtual++;
 			return frase;
-		} catch (SQLException e) {
+		}catch(NullPointerException e){
+			JOptionPane.showMessageDialog(null,"frase não encontrada");
+		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
 		return "";
