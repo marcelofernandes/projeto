@@ -39,11 +39,29 @@ public class ForcaIngles implements ForcaInterface {
 	}
 
 	
-	public String imprimirRanking() {
+	public String getDadosDoRanking() {
 		return rankig.getDadosDoRanking();
 	}
-
 	
+	public String getDica(){
+		return desafio.getDica();
+	}
+	
+	public String getNomeDoJogador(){
+		return jogador.getNome();
+	}
+	
+	public int getPontuacaoDoJogador(){
+		return jogador.getPontuacao();
+	}
+	
+	public int getQuantidadeDeEspacos(){
+		return jogador.getPalavraIngles().length;
+	}
+
+	public void iniciar(){
+		//TODO
+	}
 	public void sair() {
 		//TODO
 	}
