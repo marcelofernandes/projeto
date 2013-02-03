@@ -28,13 +28,9 @@ public class Ranking {
 		Collections.reverse(jogadoresDoRanking);
 	}
 	
-	public String getDadosDoRanking(){
-		String dados = "";
-		for(Jogador jogador: this.jogadoresDoRanking){
-			dados = dados + "Nome: " + jogador.getNome() +
-				"\tPontuação: " + jogador.getPontuacao() + "\n";
-		}
-		return dados;
+	public List <Jogador> getDadosDoRanking(){
+	
+		return jogadoresDoRanking;
 	}
 		
 }
