@@ -29,6 +29,10 @@ public class Jogador implements Comparable <Jogador> {
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
 	}
+	public String toString(){
+		return this.nome +" "+ this.pontuacao;
+		
+	}
 	
 	@Override
 	public int compareTo(Jogador jogador){
