@@ -2,7 +2,7 @@ package Projeto_de_ayla;
 
 public class GerenteDePersistencia{
 	
-	Persistenciainterface persistencia;
+	PersistenciaInterface persistencia;
 	
 	public GerenteDePersistencia(){
 		persistencia = BancoDeDados.getBanco();
