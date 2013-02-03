@@ -3,7 +3,7 @@ package Projeto_de_ayla;
 public class Desafio {
 	
 	private String palavraIngles;
-	private String palavrasPortugues;
+	private String dica;
 	private String frase;
 	
 		
@@ -11,9 +11,9 @@ public class Desafio {
 		this("","","");
 	}
 	
-	public Desafio(String palavrasIngles, String palavrasPortugues, String frase){
+	public Desafio(String palavrasIngles, String dica, String frase){
 		this.palavraIngles = palavrasIngles;
-		this.palavrasPortugues = palavrasPortugues ;
+		this.dica = dica;
 		this.frase = frase;
 		
 	}
@@ -24,11 +24,11 @@ public class Desafio {
 	public void setPalavraIngles(String palavraIngles) {
 		this.palavraIngles = palavraIngles;
 	}
-	public String getPalavrasPortugues() {
-		return palavrasPortugues;
+	public String getDica() {
+		return this.dica;
 	}
-	public void setPalavrasPortugues(String palavrasPortugues) {
-		this.palavrasPortugues = palavrasPortugues;
+	public void setDica(String dica) {
+		this.dica = dica;
 	}
 	public String getFrase() {
 		return frase;
