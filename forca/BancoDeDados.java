@@ -1,3 +1,4 @@
+package Projeto_de_ayla;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JOptionPane;
 
-public interface BancoDeDados implements PersistenciaInterface{
+public class BancoDeDados implements PersistenciaInterface{
 	
 	private static final BancoDeDados banco = new BancoDeDados();
 	private static final String DATABASE_URL = "jdbc:mysql://localhost/forca";
@@ -17,15 +18,15 @@ public interface BancoDeDados implements PersistenciaInterface{
 	private int indiceAtual;
 	private ArrayList <Integer> lista ;
 
-	private BancoDeDados banco(){
+	private BancoDeDados (){
 		lista = new ArrayList<Integer>();
-		iniciaLista();
+		iniciarLista();
 		indiceAtual = 0;
 		conectarAoBanco();
 	}
 	
 	public static BancoDeDados getBanco(){
-		return this.banco;
+		return banco;
 	}
 	
 	public void iniciarLista(){

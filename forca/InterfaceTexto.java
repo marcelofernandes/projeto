@@ -1,3 +1,5 @@
+package Projeto_de_ayla;
+
 public class InterfaceTexto implements InterfaceComUsuario{
 
 	public void mostrarMenu(){

@@ -1,22 +1,24 @@
+package Projeto_de_ayla;
+
 public class Jogo{
 
 	ForcaIngles forca;
-	InterfaceComUsuario interface;
+	InterfaceComUsuario interfaceComUsuario;
 
 	public Jogo(){
-		forca = new Forca();
-		interface = new InterfaceTexto();
+		forca = new ForcaIngles();
+		interfaceComUsuario = new InterfaceTexto();
 	}
 
 	public static void main(String ... args){
 		Jogo jogo = new Jogo();
-		jogo.run();
+		jogo.iniciar();
 	}
 	
 	public void iniciar(){
-		interface.mostrarMenu();
-		interface.escolherNivel();
-		interface.nomeDoJogador();
-		interface.iniciarJogo();
+		interfaceComUsuario.mostrarMenu();
+		interfaceComUsuario.escolherNivel();
+		interfaceComUsuario.nomeDoJogador();
+		interfaceComUsuario.iniciarJogo();
 	}
 }

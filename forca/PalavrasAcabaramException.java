@@ -1,3 +1,4 @@
+package Projeto_de_ayla;
 public class PalavrasAcabaramException extends Exception{
 
 	public PalavrasAcabaramException(){

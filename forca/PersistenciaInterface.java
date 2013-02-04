@@ -1,4 +1,5 @@
-public class PersistenciaInterface{
+package Projeto_de_ayla;
+public interface PersistenciaInterface{
 
 	public String getPalavraPortugues();
 	public String getPalavraIngles();

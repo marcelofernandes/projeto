@@ -1,3 +1,5 @@
+package Projeto_de_ayla;
+
 public interface InterfaceComUsuario{
 	
 	public void mostrarMenu();

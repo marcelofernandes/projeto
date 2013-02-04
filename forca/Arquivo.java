@@ -1,3 +1,4 @@
+package Projeto_de_ayla;
 public class Arquivo implements PersistenciaInterface{
 	
 	public Arquivo(){
