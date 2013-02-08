@@ -1,14 +1,14 @@
-package Projeto_de_ayla;
+package br.com.ufpb.projetoPoo;
+
+import java.util.List;
 
 public interface ForcaInterface {
 	
-	public void criarJogador();
+	public void criarJogador(String nome);
 	public void obterDesafio();
-	//public char[] obterLetrasErradas();
-	public boolean chutarLetra(char letra);
-	public boolean chutarPalavra(String palavra);
-	public Desafio proximoDesafio();
-	public Ranking mostrarRanking();
+	public boolean verificarLetra(char letra);
+	public boolean verificarPalavra(String palavra);
+	public List<Jogador> getDadosDoRanking();
 	public void sair();
 
 }

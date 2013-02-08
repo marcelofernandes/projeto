@@ -1,10 +1,12 @@
-package Projeto_de_ayla;
+package br.com.ufpb.projetoPoo;
 
 public class Desafio {
 	
 	private String palavraIngles;
 	private String dica;
 	private String frase;
+	private String palavraPortugues;
+	private Nivel nivel;
 	
 		
 	public Desafio(){
@@ -18,6 +20,17 @@ public class Desafio {
 		
 	}
 	
+	public void setNivel(int nivel){
+		if(nivel==1){
+			this.nivel = Nivel.FACIL;
+		}else{
+			this.nivel = Nivel.DIFICIL;
+		}
+		
+	}	
+	public void setDesafio(){
+		
+	}
 	public String getPalavraIngles() {
 		return palavraIngles;
 	}
@@ -36,6 +49,15 @@ public class Desafio {
 	public void setFrase(String frase) {
 		this.frase = frase;
 	}
-	
+	public boolean verificarLetra(char letra) {
+		String palavra = getPalavraIngles(); 
+		for(int i= 0 ; i< palavra.length(); i++){
+			if(palavra.charAt(i)== letra){
+				return true;
+			}
+		}
+		return false;
+	}
+
 
 }

@@ -1,4 +1,5 @@
-package Projeto_de_ayla;
+package br.com.ufpb.projetoPoo;
+
 public class PalavrasAcabaramException extends Exception{
 
 	public PalavrasAcabaramException(){

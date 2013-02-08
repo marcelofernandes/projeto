@@ -1,4 +1,4 @@
-﻿package Projeto_de_ayla;
+﻿package br.com.ufpb.projetoPoo;
 
 import static org.junit.Assert.*;
 import java.util.ArrayList;

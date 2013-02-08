@@ -1,16 +1,19 @@
-package Projeto_de_ayla;
+package br.com.ufpb.projetoPoo;
+
+import java.util.List;
 
 public class ForcaIngles implements ForcaInterface {
 	
 	private Jogador jogador;
 	private Desafio desafio;
 	private Ranking ranking;
-	private InterfaceDePersistencia gerente;
-	
+	private GerenteDePersistencia gerente;
+		
 	public ForcaIngles(){
-		gerente = GerenteDePersistencia.getGerente();
+		gerente = new GerenteDePersistencia();
 		ranking = new Ranking();
-		desafio = obterDesafio();
+		obterDesafio();
+		
 	}
 	
 	public void criarJogador(String nome) {
@@ -24,23 +27,17 @@ public class ForcaIngles implements ForcaInterface {
 	}
 		
 	public boolean verificarLetra(char letra) {
-		String palavra = this.desafio.getPalavraIngles(); 
-		for(int i= 0 ; i< palavra.length(); i++){
-			if(palavra.charAt(i)== letra){
-				return true;
-			}
-		}
-		return false;
+		return desafio.verificarLetra(letra);
 	}
 
 
 	public boolean verificarPalavra(String palavra) {
-		return (this.desafio.getPalavraIngles().equals(palavra))
+		return (this.desafio.getPalavraIngles().equals(palavra));
 	}
 
 	
-	public String getDadosDoRanking() {
-		return rankig.getDadosDoRanking();
+	public List<Jogador> getDadosDoRanking() {
+		return ranking.getDadosDoRanking();
 	}
 	
 	public String getDica(){
@@ -56,7 +53,7 @@ public class ForcaIngles implements ForcaInterface {
 	}
 	
 	public int getQuantidadeDeEspacos(){
-		return jogador.getPalavraIngles().length;
+		return desafio.getPalavraIngles().length();
 	}
 
 	public void iniciar(){
@@ -64,6 +61,11 @@ public class ForcaIngles implements ForcaInterface {
 	}
 	public void sair() {
 		//TODO
+	}
+	public void selecionarNivel(int nivel){
+		desafio.setDesafio(nivel);
+		
+		
 	}
 
 }
