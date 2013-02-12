@@ -34,6 +34,13 @@ public class Jogador implements Comparable <Jogador> {
 		
 	}
 	
+	public void pontuacaoPalavras(){
+		this.pontuacao += 10;
+	}
+	public void pontuacaoLetra(int qtsDeLetra){
+		this.pontuacao += 2*qtsDeLetra;
+	}
+	
 	@Override
 	public int compareTo(Jogador jogador){
 		if(this.pontuacao>jogador.pontuacao){

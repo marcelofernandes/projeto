@@ -2,7 +2,8 @@ package br.com.ufpb.projetoPoo;
 
 public class InterfaceGUI implements InterfaceComUsuario{
 
-	public void mostrarMenu(){
+	public String mostrarMenu(){
+		return null;
 		//TODO
 	}
 

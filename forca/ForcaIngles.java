@@ -8,6 +8,7 @@ public class ForcaIngles implements ForcaInterface {
 	private Desafio desafio;
 	private Ranking ranking;
 	private GerenteDePersistencia gerente;
+	private Nivel nivel;
 		
 	public ForcaIngles(){
 		gerente = new GerenteDePersistencia();
@@ -22,12 +23,15 @@ public class ForcaIngles implements ForcaInterface {
 	}
 	
 	public void obterDesafio() {
-		this.desafio = new Desafio (gerente.getPalavraIngles(), gerente.getPalavrasPortuges(), gerente.getFrase());
+		this.desafio = new Desafio (gerente.getPalavraIngles(), gerente.getDica(nivel), gerente.getFrase());
 						
 	}
 		
-	public boolean verificarLetra(char letra) {
+	public int verificarLetra(char letra) {
 		return desafio.verificarLetra(letra);
+	}
+	public char[] getVetorpalavrasIngles(){
+		return desafio.getVetorpalavrasIngles();
 	}
 
 
@@ -38,6 +42,9 @@ public class ForcaIngles implements ForcaInterface {
 	
 	public List<Jogador> getDadosDoRanking() {
 		return ranking.getDadosDoRanking();
+	}
+	public String getPalavra(){
+		return desafio.getPalavraIngles();
 	}
 	
 	public String getDica(){
@@ -62,10 +69,21 @@ public class ForcaIngles implements ForcaInterface {
 	public void sair() {
 		//TODO
 	}
-	public void selecionarNivel(int nivel){
-		desafio.setDesafio(nivel);
+	public void selecionarNivel(String nivel){
+		if(nivel.equals("1")){
+			this.nivel = Nivel.FACIL;
+		}else{
+			this.nivel = Nivel.DIFICIL;
+		}
 		
 		
+	}
+	
+	public void pontuacaoPalavras(){
+		jogador.pontuacaoPalavras();
+	}
+	public void pontuacaoLetra(int qtsDeLetra){
+		jogador.pontuacaoLetra(qtsDeLetra);
 	}
 
 }
