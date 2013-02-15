@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo;
+package br.com.ufpb.projetoPoo3a;
 
 import java.util.List;
 
@@ -9,22 +9,24 @@ public class ForcaIngles implements ForcaInterface {
 	private Ranking ranking;
 	private GerenteDePersistencia gerente;
 	private Nivel nivel;
-		
-	public ForcaIngles(){
+	
+	
+	
+	public ForcaIngles() throws PalavrasAcabaramException{
 		gerente = new GerenteDePersistencia();
-		ranking = new Ranking();
+		this.desafio = new Desafio ();
+		this.ranking = new Ranking();
 		obterDesafio();
-		
+			
 	}
 	
-	public void criarJogador(String nome) {
+	public void criarJogador(String nome) { 
 		this.jogador = new Jogador(nome);
 				
 	}
 	
-	public void obterDesafio() {
-		this.desafio = new Desafio (gerente.getPalavraIngles(), gerente.getDica(nivel), gerente.getFrase());
-						
+	public void obterDesafio()throws PalavrasAcabaramException {
+		this.desafio.setDesafio(gerente.getDica(nivel), gerente.getPalavraIngles(), gerente.getFrase())	;							
 	}
 		
 	public int verificarLetra(char letra) {
@@ -45,6 +47,10 @@ public class ForcaIngles implements ForcaInterface {
 	}
 	public String getPalavra(){
 		return desafio.getPalavraIngles();
+	}
+	
+	public String getFrase(){
+		return desafio.getFrase();
 	}
 	
 	public String getDica(){

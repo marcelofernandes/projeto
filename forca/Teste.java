@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo;
+package br.com.ufpb.projetoPoo3a;
 
 import static org.junit.Assert.*;
 import org.junit.Test;

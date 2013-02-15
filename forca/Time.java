@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo;
+package br.com.ufpb.projetoPoo3a;
 
 import java.awt.Dimension;
 import java.awt.Font;

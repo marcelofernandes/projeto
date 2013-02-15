@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo;
+package br.com.ufpb.projetoPoo3a;
 
 public interface InterfaceComUsuario{
 	

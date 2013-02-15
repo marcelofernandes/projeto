@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo;
+package br.com.ufpb.projetoPoo3a;
 
 import javax.swing.JOptionPane;
 
@@ -21,7 +21,7 @@ public class InterfaceTexto implements InterfaceComUsuario{
 
 	public String iniciarJogo(){
 		String opcao = JOptionPane.showInputDialog("Digite\n 1 p/ dica,\n 2 p/ chutar palavra, \n 3 p/ chutar letra, " +
-		"\n 4 p/ proximo desafio ", "\n 5 p/ sair do jogo");
+		"\n 4 p/ proximo desafio, \n 5 p/ sair do jogo");
 		return opcao;
 	}
 	public String chutarPalavra(){
@@ -29,7 +29,7 @@ public class InterfaceTexto implements InterfaceComUsuario{
 		return  opcao;
 	}
 	public void desenharPalavra(char []qtsLetras){
-		System.out.println("A palavra é "+ qtsLetras);
+		System.out.println(qtsLetras);
 	}
 
 	@Override

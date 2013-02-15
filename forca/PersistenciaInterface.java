@@ -1,10 +1,10 @@
-package br.com.ufpb.projetoPoo;
+package br.com.ufpb.projetoPoo3a;
 
 public interface PersistenciaInterface{
 
-	public String getPalavraPortugues();
-	public String getPalavraIngles();
-	public String getFrase();
+	public String getPalavraPortugues()throws PalavrasAcabaramException;
+	public String getPalavraIngles()throws PalavrasAcabaramException;
+	public String getFrase() throws PalavrasAcabaramException;
 	public String getAudioDaPalavra();
 	public String getAudioDaFrase();
 

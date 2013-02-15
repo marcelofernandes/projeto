@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo;
+package br.com.ufpb.projetoPoo3a;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,6 +17,7 @@ public class BancoDeDados implements PersistenciaInterface{
 	private ResultSet resultSet = null;
 	private int indiceAtual;
 	private ArrayList <Integer> lista ;
+	
 
 	private BancoDeDados (){
 		lista = new ArrayList<Integer>();
@@ -25,7 +26,7 @@ public class BancoDeDados implements PersistenciaInterface{
 		conectarAoBanco();
 	}
 	
-	public static BancoDeDados getBanco(){
+	public static BancoDeDados getInstancia(){
 		return banco;
 	}
 	
