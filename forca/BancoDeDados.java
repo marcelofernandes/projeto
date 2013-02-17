@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 
 public class BancoDeDados implements PersistenciaInterface{
 	
-	private static final BancoDeDados banco = new BancoDeDados();
 	private static final String DATABASE_URL = "jdbc:mysql://localhost/forca";
 	private Connection connection = null;
 	private Statement statement = null;
@@ -19,15 +18,11 @@ public class BancoDeDados implements PersistenciaInterface{
 	private ArrayList <Integer> lista ;
 	
 
-	private BancoDeDados (){
+	public BancoDeDados (){
 		lista = new ArrayList<Integer>();
 		iniciarLista();
 		indiceAtual = 0;
 		conectarAoBanco();
-	}
-	
-	public static BancoDeDados getInstancia(){
-		return banco;
 	}
 	
 	public void iniciarLista(){
@@ -63,7 +58,7 @@ public class BancoDeDados implements PersistenciaInterface{
 			resultSet.absolute(lista.get(indiceAtual));
 			return (String)resultSet.getObject(3);
 		}catch(NullPointerException e){
-			JOptionPane.showMessageDialog(null,"dica não encontrada.");
+			JOptionPane.showMessageDialog(null,"dica nï¿½o encontrada.");
 		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
@@ -74,7 +69,7 @@ public class BancoDeDados implements PersistenciaInterface{
 		try {
 			return (String)resultSet.getObject(2);
 		}catch(NullPointerException e){
-			JOptionPane.showMessageDialog(null,"palavra em inglês não encontrada");
+			JOptionPane.showMessageDialog(null,"palavra em inglï¿½s nï¿½o encontrada");
 		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
@@ -87,7 +82,7 @@ public class BancoDeDados implements PersistenciaInterface{
 			indiceAtual++;
 			return frase;
 		}catch(NullPointerException e){
-			JOptionPane.showMessageDialog(null,"frase não encontrada");
+			JOptionPane.showMessageDialog(null,"frase nï¿½o encontrada");
 		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
@@ -99,7 +94,7 @@ public class BancoDeDados implements PersistenciaInterface{
 			resultSet.absolute(lista.get(indiceAtual));
 			return (String)resultSet.getObject(5);
 		}catch(NullPointerException e){
-			JOptionPane.showMessageDialog(null,"audio não encontrado.");
+			JOptionPane.showMessageDialog(null,"audio nï¿½o encontrado.");
 		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
@@ -111,7 +106,7 @@ public class BancoDeDados implements PersistenciaInterface{
 			resultSet.absolute(lista.get(indiceAtual));
 			return (String)resultSet.getObject(6);
 		}catch(NullPointerException e){
-			JOptionPane.showMessageDialog(null,"audio não encontrado.");
+			JOptionPane.showMessageDialog(null,"audio nï¿½o encontrado.");
 		}catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,e.getMessage());
 		}
