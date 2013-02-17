@@ -5,7 +5,7 @@ public class GerenteDePersistencia{
 	PersistenciaInterface persistencia;
 	
 	public GerenteDePersistencia(){
-		persistencia = Arquivo.getInstancia();
+		persistencia = new Arquivo();
 	}
 	
 	public String getDica(Nivel nivel)throws PalavrasAcabaramException{
