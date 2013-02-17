@@ -69,12 +69,7 @@ public class ForcaIngles implements ForcaInterface {
 		return desafio.getPalavraIngles().length();
 	}
 
-	public void iniciar(){
-		//TODO
-	}
-	public void sair() {
-		//TODO
-	}
+
 	public void selecionarNivel(String nivel){
 		if(nivel.equals("1")){
 			this.nivel = Nivel.FACIL;
@@ -90,6 +85,14 @@ public class ForcaIngles implements ForcaInterface {
 	}
 	public void pontuacaoLetra(int qtsDeLetra){
 		jogador.pontuacaoLetra(qtsDeLetra);
+	}
+	
+	public Nivel getNivel() {
+		return nivel;
+	}
+
+	public void comparaRanking() {
+		ranking.compararJogadorComRanking(jogador);
 	}
 
 }
