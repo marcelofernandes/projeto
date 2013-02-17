@@ -1,19 +1,17 @@
 package br.com.ufpb.projetoPoo3a;
 
 public class Arquivo implements PersistenciaInterface{
-	private static final Arquivo arquivos = new Arquivo();
+
 	//arquivo de palavras pro desafio inicializando palavras
 	private String[] arquivopalavraIngles = {"ball","cat","house","flower"};
 	private String[] arquivopalavraPortugues = {"bola","gato","casa","flor"};
-	private String[] arquivofrase = {"bola blá blá blá","gato blá blá blá","casa blá blá blá","flor blá blá blá"};
+	private String[] arquivofrase = {"bola blï¿½ blï¿½ blï¿½","gato blï¿½ blï¿½ blï¿½","casa blï¿½ blï¿½ blï¿½","flor blï¿½ blï¿½ blï¿½"};
 	private int controladorDedesafios = 0;
 	
-	private Arquivo(){
+	public Arquivo(){
 		
 	}
-	public static Arquivo getInstancia(){
-		return arquivos;
-	}
+	
 	public String getPalavraPortugues()throws PalavrasAcabaramException{
 		if(controladorDedesafios>=arquivopalavraPortugues.length){
 			throw new PalavrasAcabaramException();
