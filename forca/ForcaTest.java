@@ -1,3 +1,5 @@
+package br.com.ufpb.projetoPoo3a;
+
 import static org.junit.Assert.*;
 
 import java.util.List;
