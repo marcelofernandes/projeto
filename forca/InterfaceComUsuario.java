@@ -9,5 +9,5 @@ public interface InterfaceComUsuario{
 	public void desenharPalavra(char []qtsLetras);
 	public String chutarPalavra();
 	public char chutarLetra();
-
+	public void imprimirRanking(List<Jogador> dadosDoRanking);
 }
