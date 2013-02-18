@@ -9,15 +9,18 @@ public class InterfaceGUI implements InterfaceComUsuario{
 		//TODO
 	}
 
-	public void escolherNivel(){
+	public String escolherNivel(){
+		return null;
 		//TODO
 	}
 
-	public void nomeDoJogador(){
+	public String nomeDoJogador(){
+		return null;
 		//TODO
 	}
 
-	public void iniciarJogo(){
+	public String iniciarJogo(){
+		return null;
 		//TODO
 	}
 
