@@ -86,6 +86,10 @@ public class ForcaIngles {
 		jogador.pontuacaoLetra(qtsDeLetra);
 	}
 	
+	public void setPontuacao(int pontuacao){
+		jogador.setPontuacao(pontuacao);
+	}
+	
 	public Nivel getNivel() {
 		return nivel;
 	}
