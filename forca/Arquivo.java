@@ -5,7 +5,7 @@ public class Arquivo implements PersistenciaInterface{
 	//arquivo de palavras pro desafio inicializando palavras
 	private String[] arquivopalavraIngles = {"ball","cat","house","flower"};
 	private String[] arquivopalavraPortugues = {"bola","gato","casa","flor"};
-	private String[] arquivofrase = {"bola bl� bl� bl�","gato bl� bl� bl�","casa bl� bl� bl�","flor bl� bl� bl�"};
+	private String[] arquivofrase = {"The ball is small","The cat is smart","The house is big","The flower is yellow"};
 	private int controladorDedesafios = 0;
 	
 	public Arquivo(){
