@@ -1,13 +1,11 @@
 package br.com.ufpb.projetoPoo3a;
 
-import javax.swing.JOptionPane;
-
 public class Jogo{
 
 	ForcaIngles forca;
 	InterfaceComUsuario interfaceComUsuario;
 	private String opcao;
-	private boolean continua = false;
+	private boolean continua = true;
 
 	public Jogo() throws PalavrasAcabaramException{
 		forca = new ForcaIngles();
@@ -20,6 +18,13 @@ public class Jogo{
 	}
 	
 	public void iniciarJogo(){
+		
+		try {
+			forca.obterDesafio();
+		} catch (PalavrasAcabaramException e) {
+			System.out.println("Fim");
+		}
+		
 		String opcao = interfaceComUsuario.mostrarMenu();
 		do{
 			if(opcao.equals("1")){
@@ -34,12 +39,15 @@ public class Jogo{
 			
 			}
 			else if(opcao.equals("3")){
+				interfaceComUsuario.imprimirRanking(forca.getDadosDoRanking());
+			}
+			else if(opcao.equals("4")){
 				System.out.println("Fim de jogo");
-				continua = true;
+				continua = false;
 			}
 			
 		
-		}while(continua != true);		
+		}while(continua);		
 		
 	}
 	
@@ -48,7 +56,7 @@ public class Jogo{
 		do{
 			System.out.println("PONTOS ["+forca.getPontuacaoDoJogador()+"] "+" NOME["+forca.getNomeDoJogador()+"]\n");
 			interfaceComUsuario.desenharPalavra(forca.getVetorpalavrasIngles());
-			String opcao = interfaceComUsuario.iniciarJogo();
+			opcao = interfaceComUsuario.iniciarJogo();
 			if(opcao.equals("1")){
 				System.out.println(forca.getDica());										
 			}
@@ -56,19 +64,21 @@ public class Jogo{
 				String nomePalavra = interfaceComUsuario.chutarPalavra();
 				boolean acertou = forca.verificarPalavra(nomePalavra);
 				if(acertou){
-					System.out.println("você acertou! "+forca.getPalavra()); 
+					System.out.println("vocÃª acertou! "+forca.getPalavra()); 
 					System.out.println(forca.getFrase());//mostra frase
 					forca.pontuacaoPalavras();//pontuando por palavra certa
+					
 					try {
 						forca.obterDesafio();
 					} catch (PalavrasAcabaramException e) {
 						// TODO Auto-generated catch block
 						System.err.println("Fim!");
-						continua = true;
+						continua = false;
 					}
+					
 				}
 				else{
-					System.out.println("você errou! "); 
+					System.out.println("vocÃª errou! "); 
 				}
 				
 			}
@@ -86,7 +96,7 @@ public class Jogo{
 				} catch (PalavrasAcabaramException e) {
 					// TODO Auto-generated catch block
 					System.err.println("Fim!");
-					continua = true;
+					continua = false;
 				}
 				
 				
@@ -94,10 +104,10 @@ public class Jogo{
 			
 			else if(opcao.equals("5")){
 				System.out.println("Fim de jogo");
-				continua = true;
+				continua = false;
 				
 			}
 		
-		}while(continua!= true);
+		}while(continua);
 	}
 }
