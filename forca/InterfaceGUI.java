@@ -37,4 +37,9 @@ public class InterfaceGUI implements InterfaceComUsuario{
 		return 0;
 	}
 
+	@Override
+	public void imprimirRanking(List<Jogador> dadosDoRanking) {
+		// TODO Auto-generated method stub
+		
+	}
 }
