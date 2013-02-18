@@ -1,16 +1,17 @@
 package br.com.ufpb.projetoPoo3a;
-
+import java.util.List;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class InterfaceTexto implements InterfaceComUsuario{
 
 	public String mostrarMenu(){
-			String opcao = JOptionPane.showInputDialog("Digite\n 1 p/ Jogar,\n 2 p/ Instrução, \n 3 p/ Sair");
+			String opcao = JOptionPane.showInputDialog("Digite\n 1 p/ Jogar,\n 2 p/ Instruï¿½ï¿½o, \n 3 p/ Sair");
 			return opcao;
 	}
 	
 	public String escolherNivel(){
-		String nivel = JOptionPane.showInputDialog("Digite\n 1 p/ Fácil,\n 2 p/ Díficil");
+		String nivel = JOptionPane.showInputDialog("Digite\n 1 p/ Fï¿½cil,\n 2 p/ Dï¿½ficil");
 		return nivel;
 	}
 
