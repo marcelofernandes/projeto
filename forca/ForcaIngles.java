@@ -2,7 +2,7 @@ package br.com.ufpb.projetoPoo3a;
 
 import java.util.List;
 
-public class ForcaIngles implements ForcaInterface {
+public class ForcaIngles {
 	
 	private Jogador jogador;
 	private Desafio desafio;
