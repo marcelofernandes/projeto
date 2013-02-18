@@ -1,5 +1,7 @@
 package br.com.ufpb.projetoPoo3a;
 
+import java.util.List;
+
 public class InterfaceGUI implements InterfaceComUsuario{
 
 	public String mostrarMenu(){
