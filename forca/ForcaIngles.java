@@ -16,7 +16,6 @@ public class ForcaIngles implements ForcaInterface {
 		gerente = new GerenteDePersistencia();
 		this.desafio = new Desafio ();
 		this.ranking = new Ranking();
-		obterDesafio();
 			
 	}
 	
