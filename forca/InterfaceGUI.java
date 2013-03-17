@@ -266,6 +266,7 @@ public class InterfaceGUI extends JFrame implements InterfaceComUsuario{
 	}
 
 	public String escolherNivel(){
+<<<<<<< HEAD
 		continua = true;
 		voltarMenu.setEnabled(false);
 		zerarRanking.setEnabled(false);
@@ -566,6 +567,20 @@ public class InterfaceGUI extends JFrame implements InterfaceComUsuario{
 		if(t.isAlive()){
 			t.interrupt();
 		}
+=======
+		return null;
+		//TODO
+	}
+
+	public String nomeDoJogador(){
+		return null;
+		//TODO
+	}
+
+	public String iniciarJogo(){
+		return null;
+		//TODO
+>>>>>>> f12a9d6f767ada1eda137db99ec0a0e122997f25
 	}
 
 	@Override

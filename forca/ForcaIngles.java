@@ -105,6 +105,7 @@ public class ForcaIngles{
 		gerenteAudio.play("./Frases/"+getAudioDaFrase()+".mp3");
 	}
 	
+<<<<<<< HEAD
 	public void aumentarPontuacaoPalavra(){
 		jogador.aumentarPontuacaoPalavra();
 	}
@@ -112,6 +113,12 @@ public class ForcaIngles{
 		jogador.aumentarPontuacaoLetra(qtsDeLetra);
 	}
 
+=======
+	public void setPontuacao(int pontuacao){
+		jogador.setPontuacao(pontuacao);
+	}
+	
+>>>>>>> f12a9d6f767ada1eda137db99ec0a0e122997f25
 	public Nivel getNivel() {
 		return nivel;
 	}
