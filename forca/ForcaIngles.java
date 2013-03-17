@@ -1,31 +1,30 @@
-package br.com.ufpb.projetoPoo3a;
-
 import java.util.List;
 
-public class ForcaIngles {
+
+public class ForcaIngles{
 	
 	private Jogador jogador;
 	private Desafio desafio;
 	private Ranking ranking;
 	private GerenteDePersistencia gerente;
 	private Nivel nivel;
+	private GerenteDeAudio gerenteAudio;
 	
-	
-	
-	public ForcaIngles() throws PalavrasAcabaramException{
+	public ForcaIngles(){
 		gerente = new GerenteDePersistencia();
+		gerenteAudio = new GerenteDeAudio();
 		this.desafio = new Desafio ();
 		this.ranking = new Ranking();
-			
+		carregarRanking();
 	}
 	
 	public void criarJogador(String nome) { 
-		this.jogador = new Jogador(nome);
+		this.jogador = new Jogador(nome,0);
 				
 	}
 	
 	public void obterDesafio()throws PalavrasAcabaramException {
-		this.desafio.setDesafio(gerente.getDica(nivel), gerente.getPalavraIngles(), gerente.getFrase())	;							
+		this.desafio.setDesafio(gerente.getPalavraIngles(),gerente.getDica(nivel), gerente.getFrase(), gerente.getAudioDaFrase())	;							
 	}
 		
 	public int verificarLetra(char letra) {
@@ -36,14 +35,19 @@ public class ForcaIngles {
 	}
 
 
-	public boolean verificarPalavra(String palavra) {
-		return (this.desafio.getPalavraIngles().equals(palavra));
+	public boolean verificarPalavra(String palavraParaVerificar) {
+		return this.desafio.verificarPalavra(palavraParaVerificar);
 	}
 
 	
-	public List<Jogador> getDadosDoRanking() {
+	public String getDadosDoRanking() {
 		return ranking.getDadosDoRanking();
 	}
+	
+	public List<Character> getLetrasQueSairam(){
+		return desafio.getLetrasQueSairam();
+	}
+	
 	public String getPalavra(){
 		return desafio.getPalavraIngles();
 	}
@@ -56,18 +60,34 @@ public class ForcaIngles {
 		return desafio.getDica();
 	}
 	
+	public String getAudioDaFrase(){
+		return desafio.getAudioDaFrase();
+	}
+	
+	
 	public String getNomeDoJogador(){
 		return jogador.getNome();
 	}
 	
+	public void setNomeDoJogador(String nome){
+		this.jogador.setNome(nome);
+	}
+	
+	
+	public void setPontuacao(int pontuacao){
+		jogador.setPontuacao(pontuacao);
+	}
 	public int getPontuacaoDoJogador(){
 		return jogador.getPontuacao();
+	}
+	
+	public int getQtdDeLetrasAcertdas(){
+		return this.jogador.getQtdDeLetrasAcertdas();
 	}
 	
 	public int getQuantidadeDeEspacos(){
 		return desafio.getPalavraIngles().length();
 	}
-
 
 	public void selecionarNivel(String nivel){
 		if(nivel.equals("1")){
@@ -75,23 +95,51 @@ public class ForcaIngles {
 		}else{
 			this.nivel = Nivel.DIFICIL;
 		}
-		
-		
 	}
 	
-	public void pontuacaoPalavras(){
-		jogador.pontuacaoPalavras();
-	}
-	public void pontuacaoLetra(int qtsDeLetra){
-		jogador.pontuacaoLetra(qtsDeLetra);
+	public void executarAudioDaDica(){
+		gerenteAudio.play("./Palavras/"+getDica()+".mp3");
 	}
 	
+	public void executarAudioDaFrase(){
+		gerenteAudio.play("./Frases/"+getAudioDaFrase()+".mp3");
+	}
+	
+	public void aumentarPontuacaoPalavra(){
+		jogador.aumentarPontuacaoPalavra();
+	}
+	public void aumentarPontuacaoLetra(int qtsDeLetra){
+		jogador.aumentarPontuacaoLetra(qtsDeLetra);
+	}
+
 	public Nivel getNivel() {
 		return nivel;
 	}
 
-	public void comparaRanking() {
+	public void compararRanking() {
 		ranking.compararJogadorComRanking(jogador);
+	}
+	
+	public void zerarRanking(){
+		this.ranking.zerarRanking();
+	}
+	
+	public void cadastrarNovoDesafio(){
+		gerente.cadastrarDesafio();
+	}
+	
+	public void removerDesafio(){
+		gerente.removerDesafio();
+	}
+	
+	public void carregarRanking(){
+		ranking.carregarRanking(gerente.carregarNomesDosJogadores(),gerente.carregarPontuacoesDosJogadores());
+	}
+	public void salvarRanking(){
+		gerente.salvarRanking(ranking.getNomesDosJogadores(),ranking.getPontuacoesDosJogadores());
+	}
+	public void close(){
+		gerente.fecharConexao();
 	}
 
 }

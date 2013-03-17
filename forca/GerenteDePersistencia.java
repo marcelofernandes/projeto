@@ -1,4 +1,6 @@
-package br.com.ufpb.projetoPoo3a;
+import java.util.List;
+
+
 
 public class GerenteDePersistencia{
 	
@@ -8,13 +10,35 @@ public class GerenteDePersistencia{
 		persistencia = new Arquivo();
 	}
 	
+	public void cadastrarDesafio(){
+		persistencia.cadastrarDesafio();
+	}
+	public void removerDesafio() {
+		persistencia.removerDesafio();
+		
+	}
+	public List<String> carregarNomesDosJogadores(){
+		return persistencia.carregarNomesDosJogadores();
+	}
+	public List<Integer> carregarPontuacoesDosJogadores(){
+		return persistencia.carregarPontuacoesDosJogadores();
+	}
+	
+	public void salvarRanking(List<String> nomes, List<Integer> pontuacoes){
+		persistencia.salvarRanking(nomes, pontuacoes);
+	}
+
+	public void fecharConexao(){
+		persistencia.fecharConexao();
+	}
+	
 	public String getDica(Nivel nivel)throws PalavrasAcabaramException{
 		if( nivel == Nivel.FACIL){
 			
 				return persistencia.getPalavraPortugues();
 			
 		}else{			
-				return persistencia.getPalavraPortugues();
+				return persistencia.getAudioDaPalavra();
 		}
 		
 	}
@@ -29,6 +53,13 @@ public class GerenteDePersistencia{
 		
 			return persistencia.getFrase();
 		
-		}
+	}
+	
+	
+public String getAudioDaFrase() throws PalavrasAcabaramException{
+		
+		return persistencia.getAudioDaFrase();
+	
+	}
 	
 }

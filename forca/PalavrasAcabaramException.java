@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo3a;
+
 
 public class PalavrasAcabaramException extends Exception{
 

@@ -1,4 +1,4 @@
-package br.com.ufpb.projetoPoo3a;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,27 +8,29 @@ public class Desafio {
 	private String palavraIngles;
 	private String dica;
 	private String frase;
+	private String audioDaFrase;
 	private char [] vetorPalavrasIngles;
-	private List<Character> letrasSaida;
+	private List<Character> letrasSaidas;
 	
 	
 	public Desafio(){
-		this("","","");
-		this.letrasSaida = new ArrayList<Character>();
+		this.letrasSaidas = new ArrayList<Character>();
 	}
 	
-	public Desafio( String dica,String palavrasIngles, String frase){
+	public Desafio(String palavrasIngles,String dica, String frase, String audioFrase){
 		this.palavraIngles = palavrasIngles;
 		this.dica = dica;
 		this.frase = frase;
 						
 	}
 	
-	public void setDesafio(String dica,String palavrasIngles, String frase ){
-		
-			setDica(dica);
+	public void setDesafio(String palavrasIngles,String dica, String frase, String audioFrase){
+			
 			setPalavraIngles(palavrasIngles);
+			setDica(dica);
 			setFrase(frase);
+			setAudioDaFrase(audioFrase);
+			letrasSaidas.clear() ;
 	}
 	public String getPalavraIngles() {
 		return palavraIngles;
@@ -56,19 +58,30 @@ public class Desafio {
 	public void setFrase(String frase) {
 		this.frase = frase;
 	}
+	
+	public String getAudioDaFrase() {
+		return this.audioDaFrase;
+	}
+	
+	public List<Character> getLetrasQueSairam(){
+		return this.letrasSaidas;
+	}
+	
+	public void setAudioDaFrase(String audioDaFrase) {
+		this.audioDaFrase = audioDaFrase;
+	}
+	
 	public int verificarLetra(char letra) {
 		int contador = 0;
-		
-		if(letrasSaida.contains(letra)){
-			
+		letra = Character.toUpperCase(letra);
+		if(letrasSaidas.contains(letra)){
 			return contador; 
-			
 		}else{
-			String palavra = getPalavraIngles(); 
-			letrasSaida.add(letra);
+			String palavra = getPalavraIngles().toUpperCase(); 
+			letrasSaidas.add(letra);
 			for(int i= 0 ; i< palavra.length(); i++){
 				if(palavra.charAt(i)== letra){
-					pintaVetor(i, letra);
+					preencheVetor(i, letra);
 					contador++;
 				}
 			
@@ -78,10 +91,16 @@ public class Desafio {
 		return contador;
 	}
 	
-	public void pintaVetor(int indice, char letra){
+	public boolean verificarPalavra(String palavraParaVerificar){
+		return this.palavraIngles.equalsIgnoreCase(palavraParaVerificar);
+	}
+	
+	public void preencheVetor(int indice, char letra){
 		vetorPalavrasIngles[indice] = letra;
 		
 	}
+
+	
 
 
 }

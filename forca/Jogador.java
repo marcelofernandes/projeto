@@ -1,17 +1,16 @@
-package br.com.ufpb.projetoPoo3a;
+
 
 public class Jogador implements Comparable <Jogador> {
 
 	private String nome;
 	private int pontuacao;
+	private int qtdDeLetrasAcertadas;
 	
-	public Jogador(){
-		this("");
-	}
 	
-	public Jogador(String nome){
-		this.nome = nome;
-		this.pontuacao = 0;
+	public Jogador(String nome,int pontuacao){
+		setNome(nome);
+		setPontuacao(pontuacao);
+		this.qtdDeLetrasAcertadas = 0;
 	}
 
 	public String getNome() {
@@ -19,7 +18,7 @@ public class Jogador implements Comparable <Jogador> {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.toUpperCase();;
 	}
 
 	public int getPontuacao() {
@@ -29,16 +28,18 @@ public class Jogador implements Comparable <Jogador> {
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
 	}
-	public String toString(){
-		return this.nome +" "+ this.pontuacao;
-		
+	
+	public int getQtdDeLetrasAcertdas(){
+		return this.qtdDeLetrasAcertadas;
 	}
 	
-	public void pontuacaoPalavras(){
+	public void aumentarPontuacaoPalavra(){
 		this.pontuacao += 10;
 	}
-	public void pontuacaoLetra(int qtsDeLetra){
+	
+	public void aumentarPontuacaoLetra(int qtsDeLetra){
 		this.pontuacao += 2*qtsDeLetra;
+		this.qtdDeLetrasAcertadas += qtsDeLetra;
 	}
 	
 	@Override
@@ -52,5 +53,11 @@ public class Jogador implements Comparable <Jogador> {
 		else{
 			return -1;
 		}
+	}
+	
+	@Override
+	public String toString(){
+		return this.nome +" "+ this.pontuacao;
+		
 	}
 }
